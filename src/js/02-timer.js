@@ -42,10 +42,10 @@ const timer = {
          
          const { days, hours, minutes, seconds } = this.convertMs(ms);
 
-         document.querySelector('span[data-days]').textContent = this.pad(days);
-         document.querySelector('span[data-hours]').textContent = this.pad(hours);
-         document.querySelector('span[data-minutes]').textContent = this.pad(minutes);
-         document.querySelector('span[data-seconds]').textContent = this.pad(seconds);
+         document.querySelector('span[data-days]').textContent = this.addLeadingZero(days);
+         document.querySelector('span[data-hours]').textContent = this.addLeadingZero(hours);
+         document.querySelector('span[data-minutes]').textContent = this.addLeadingZero(minutes);
+         document.querySelector('span[data-seconds]').textContent = this.addLeadingZero(seconds);
 
       }, 1000)
    },
@@ -74,7 +74,7 @@ const timer = {
       return { days, hours, minutes, seconds };
     },
 
-pad(value) {
+addLeadingZero(value) {
    return String(value).padStart(2, 0);
  },
 
